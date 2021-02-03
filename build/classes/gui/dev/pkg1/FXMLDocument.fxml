@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-image: url(icons/back.png); -fx-border-radius: 10 10 10;" stylesheets="@Gui.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.dev.pkg1.FXMLDocumentController">
+    <children>
+        <AnchorPane id="anchorPane1" fx:id="anchorPane1" prefHeight="720.0" prefWidth="450.0" style="-fx-background-color: #f4f4f4; -fx-background-radius: 10 0 0 10;" stylesheets="@Gui.css">
+            <children>
+                <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="5.0" layoutY="5.0" onMouseClicked="#Exit_Circle" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@icons/cros.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="25.0" layoutY="5.0" onMouseClicked="#Min_circle" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@icons/minimize.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@icons/core-ml-128x128_2x.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="94.0" layoutY="40.0" text="Unified Machine">
+                    <font>
+                        <Font size="28.0" />
+                    </font>
+                </Label>
+                <Label layoutX="94.0" layoutY="80.0" text="Learning Tool V2">
+                    <font>
+                        <Font size="28.0" />
+                    </font>
+                </Label>
+            <Pane fx:id="pro_mode_pane" layoutY="130.0" maxHeight="592.0" maxWidth="450.0" minHeight="592.0" minWidth="450.0" prefHeight="592.0" prefWidth="450.0" style="-fx-background-color: #f4f4f4;">
+               <children>
+                  <Label layoutX="10.0" layoutY="18.0" text="Number of Steps:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="58.0" text="Model Name:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="108.0" text="Label File Name:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="158.0" text="Summary Logs Name:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="208.0" text="Learning Rate:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="num_steps" layoutX="190.0" layoutY="18.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="4000" />
+                  <JFXTextField fx:id="model_name" layoutX="190.0" layoutY="58.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="output_graph.pb" />
+                  <JFXTextField fx:id="label_name" layoutX="190.0" layoutY="108.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="output_labels.txt" />
+                  <JFXTextField fx:id="logs_name" layoutX="190.0" layoutY="158.0" maxWidth="250.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" text="retrain_logs" />
+                  <JFXTextField fx:id="learning_rate" layoutX="190.0" layoutY="208.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="0.01" />
+                  <Label layoutX="10.0" layoutY="508.0" text="Finale Layer Name:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="258.0" text="Testing Percentage:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="408.0" text="Train Batch Size:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="308.0" text="Validation Percentage:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="358.0" text="Evalution Step Interval:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="458.0" text="Validation Batch Size:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="testing_percentage" layoutX="190.0" layoutY="258.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="10" />
+                  <JFXTextField fx:id="validation_percentage" layoutX="190.0" layoutY="308.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="10" />
+                  <JFXTextField fx:id="ev_step_interval" layoutX="190.0" layoutY="358.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="10" />
+                  <JFXTextField fx:id="train_batch_size" layoutX="190.0" layoutY="408.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="100" />
+                  <JFXTextField fx:id="validation_batch_size" layoutX="190.0" layoutY="458.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="100" />
+                  <JFXTextField fx:id="final_layer" layoutX="190.0" layoutY="508.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="final_result" />
+               </children>
+            </Pane>
+            <Pane fx:id="pro_mode_test_pane" layoutY="130.0" maxHeight="592.0" maxWidth="450.0" minHeight="592.0" minWidth="450.0" prefHeight="592.0" prefWidth="450.0" style="-fx-background-color: #f4f4f4;">
+               <children>
+                  <Label layoutX="10.0" layoutY="18.0" text="Input Height:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="58.0" text="Input Width:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="108.0" text="Input Mean:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="158.0" text="Input Std:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="208.0" text="Input Layer:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="test_input_height" layoutX="190.0" layoutY="18.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="299" />
+                  <JFXTextField fx:id="test_input_width" layoutX="190.0" layoutY="58.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="299" />
+                  <JFXTextField fx:id="test_input_mean" layoutX="190.0" layoutY="108.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="0" />
+                  <JFXTextField fx:id="test_input_std" layoutX="190.0" layoutY="158.0" maxWidth="250.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" text="255" />
+                  <JFXTextField fx:id="test_input_layer" layoutX="190.0" layoutY="208.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Placeholder" />
+                  <Label layoutX="10.0" layoutY="258.0" text="Output Layer:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="test_output_layer" layoutX="190.0" layoutY="258.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="final_result" />
+               </children>
+            </Pane>
+            <Pane fx:id="modes_pane" layoutY="130.0" maxWidth="450.0" minWidth="450.0" prefHeight="592.0" prefWidth="450.0" style="-fx-background-color: #f4f4f4;">
+               <children>
+                      <JFXButton fx:id="btn_CNN" layoutX="25.0" layoutY="84.0" maxHeight="45.0" maxWidth="400.0" minHeight="45.0" minWidth="400.0" onMouseClicked="#btnCNNClicked" prefHeight="45.0" prefWidth="400.0" text="Normal Mode">
+                          <font>
+                              <Font size="20.0" />
+                          </font>
+                      </JFXButton>
+                      <JFXButton fx:id="btn_2" layoutX="25.0" layoutY="136.0" maxHeight="45.0" maxWidth="400.0" minHeight="45.0" minWidth="400.0" onMouseClicked="#btn2Clicked" prefHeight="45.0" prefWidth="400.0" text="High Face Accuracy Mode">
+                          <font>
+                              <Font size="20.0" />
+                          </font>
+                      </JFXButton>
+                      <JFXButton fx:id="btn_3" layoutX="25.0" layoutY="242.0" maxHeight="45.0" maxWidth="400.0" minHeight="45.0" minWidth="400.0" onMouseClicked="#btn3Clicked" prefHeight="45.0" prefWidth="400.0" text="Batch Testing">
+                          <font>
+                              <Font size="20.0" />
+                          </font>
+                      </JFXButton>
+                      <JFXButton fx:id="btn_home" layoutX="25.0" layoutY="28.0" maxHeight="45.0" maxWidth="400.0" minHeight="45.0" minWidth="400.0" onMouseClicked="#btnHomeClicked" prefHeight="45.0" prefWidth="400.0" style="-fx-background-color: #5977fb;" text="Home" textFill="WHITE">
+                          <font>
+                              <Font size="20.0" />
+                          </font>
+                      </JFXButton>
+                      <JFXButton fx:id="btn_4" layoutX="25.0" layoutY="189.0" maxHeight="45.0" maxWidth="400.0" minHeight="45.0" minWidth="400.0" onMouseClicked="#btn4Clicked" prefHeight="45.0" prefWidth="400.0" text="Single Testing">
+                          <font>
+                              <Font size="20.0" />
+                          </font>
+                      </JFXButton>
+                  <JFXButton fx:id="mobile_mode_btn" layoutX="25.0" layoutY="295.0" maxHeight="45.0" maxWidth="400.0" minHeight="45.0" minWidth="400.0" onMouseClicked="#mobileModeBtnClicked" prefHeight="45.0" prefWidth="400.0" text="Mobile Mode">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="mobile_high_btn" layoutX="25.0" layoutY="347.0" maxHeight="45.0" maxWidth="400.0" minHeight="45.0" minWidth="400.0" onMouseClicked="#mobileHighBtnClicked" prefHeight="45.0" prefWidth="400.0" text="Mobile High Face Accuracy Mode">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="mobile_batch_btn" layoutX="25.0" layoutY="456.0" maxHeight="45.0" maxWidth="400.0" minHeight="45.0" minWidth="400.0" onMouseClicked="#mobileBatchBtnClicked" prefHeight="45.0" prefWidth="400.0" text="Mobile Batch Testing">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="mobile_single_btn" layoutX="25.0" layoutY="403.0" maxHeight="45.0" maxWidth="400.0" minHeight="45.0" minWidth="400.0" onMouseClicked="#mobileSingleBtnClicked" prefHeight="45.0" prefWidth="400.0" text="Mobile Single Testing">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+            </children>
+        </AnchorPane>
+        <AnchorPane id="anchorPane2" layoutX="450.0" prefHeight="720.0" prefWidth="830.0" style="-fx-background-radius: 0 10 10 0;" stylesheets="@Gui.css">
+            <children>
+                <Pane fx:id="pane_CNN" prefHeight="720.0" prefWidth="830.0" style="-fx-background-color: #fff; -fx-background-radius: 0 10 10 0;">
+                    <children>
+                        <Label layoutX="30.0" layoutY="37.0" text="Dataset Directory :">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="cnn_source" layoutX="30.0" layoutY="72.0" maxWidth="650.0" minWidth="650.0" prefHeight="30.0" prefWidth="650.0" />
+                        <JFXButton buttonType="RAISED" layoutX="690.0" layoutY="72.0" maxWidth="100.0" minWidth="100.0" onMouseClicked="#browse" prefWidth="100.0" style="-fx-border-color: #5977fb; -fx-border-radius: 5;" text="Browse" />
+                        <Label layoutX="30.0" layoutY="132.0" text="Model Saving Directory :">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="cnn_dest" layoutX="30.0" layoutY="167.0" maxWidth="650.0" minWidth="650.0" prefHeight="30.0" prefWidth="650.0" />
+                        <JFXButton buttonType="RAISED" layoutX="690.0" layoutY="167.0" maxWidth="100.0" minWidth="100.0" onMouseClicked="#cnnDestinationBrowse" prefWidth="100.0" style="-fx-border-color: #5977fb; -fx-border-radius: 5;" text="Browse" />
+                        <JFXButton buttonType="RAISED" layoutX="379.0" layoutY="316.0" onMouseClicked="#cnnTrain" style="-fx-background-color: #5977fb; -fx-text-fill: #fff;" text="Train">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXCheckBox fx:id="cnn_verbose" checkedColor="#5977fb" layoutX="729.0" layoutY="689.0" text="Verbose" />
+                        <JFXTextArea fx:id="cnn_text_area" editable="false" focusTraversable="false" layoutX="25.0" layoutY="425.0" maxWidth="780.0" minWidth="772.0" prefHeight="255.0" prefWidth="780.0" style="-fx-text-fill: #fff; -text-area-background: #000; -fx-control-inner-background: #000;" visible="false" />
+                        <ProgressBar fx:id="cnn_progress" layoutX="165.0" layoutY="386.0" maxHeight="10.0" maxWidth="500.0" minHeight="10.0" minWidth="500.0" prefHeight="10.0" prefWidth="500.0" visible="false" />
+                        <ImageView fx:id="imageview_normal" fitHeight="20.0" fitWidth="20.0" layoutX="15.0" layoutY="688.0" onMouseClicked="#showNormalDirectorySteps" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@icons/info__about__information__details__support__help__think-128.png" />
+                            </image>
+                        </ImageView>
+                  <JFXToggleButton fx:id="normal_random_manipulations" layoutX="504.0" layoutY="229.0" text="Apply Random Manipulations" toggleColor="#5977fb" toggleLineColor="#7290ff" />
+                  <JFXToggleButton fx:id="normal_pro_mode" layoutX="165.0" layoutY="229.0" text="Pro Mode" toggleColor="#5977fb" toggleLineColor="#7290ff" />
+                    </children>
+                </Pane>
+                <Pane fx:id="pane_2" prefHeight="720.0" prefWidth="830.0" style="-fx-background-color: #fff; -fx-background-radius: 0 10 10 0;">
+                    <children>
+                        <Label layoutX="30.0" layoutY="37.0" text="Dataset Directory :">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="cnn_high_source" layoutX="30.0" layoutY="72.0" maxWidth="650.0" minWidth="650.0" prefHeight="30.0" prefWidth="650.0" />
+                        <JFXButton buttonType="RAISED" layoutX="690.0" layoutY="72.0" maxWidth="100.0" minWidth="100.0" onMouseClicked="#cnnHighSourceBrowse" prefWidth="100.0" style="-fx-border-color: #5977fb; -fx-border-radius: 5;" text="Browse" />
+                        <Label layoutX="30.0" layoutY="132.0" text="Model Saving Directory :">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="cnn_high_dest" layoutX="30.0" layoutY="167.0" maxWidth="650.0" minWidth="650.0" prefHeight="30.0" prefWidth="650.0" />
+                        <JFXButton buttonType="RAISED" layoutX="690.0" layoutY="167.0" maxWidth="100.0" minWidth="100.0" onMouseClicked="#cnnHighDestBrowse" prefWidth="100.0" style="-fx-border-color: #5977fb; -fx-border-radius: 5;" text="Browse" />
+                        <JFXButton buttonType="RAISED" layoutX="379.0" layoutY="316.0" onMouseClicked="#cnnHighTrain" style="-fx-background-color: #5977fb; -fx-text-fill: #fff;" text="Train">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXCheckBox fx:id="cnn_high_verbose" checkedColor="#5977fb" layoutX="729.0" layoutY="689.0" text="Verbose" />
+                        <JFXTextArea fx:id="cnn_high_text_area" editable="false" focusTraversable="false" layoutX="25.0" layoutY="425.0" maxWidth="780.0" minWidth="772.0" prefHeight="255.0" prefWidth="780.0" style="-fx-text-fill: #fff; -text-area-background: #000; -fx-control-inner-background: #000;" visible="false" />
+                        <ProgressBar fx:id="cnn_high_progress" layoutX="165.0" layoutY="386.0" maxHeight="10.0" maxWidth="500.0" minHeight="10.0" minWidth="500.0" prefHeight="10.0" prefWidth="500.0" visible="false" />
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="15.0" layoutY="688.0" onMouseClicked="#showHIghFaceAccuracySteps" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@icons/info__about__information__details__support__help__think-128.png" />
+                            </image>
+                        </ImageView>
+                  <JFXToggleButton fx:id="high_random_manipulations" layoutX="504.0" layoutY="229.0" text="Apply Random Manipulations" toggleColor="#5977fb" toggleLineColor="#7290ff" />
+                  <JFXToggleButton fx:id="high_pro_mode" layoutX="165.0" layoutY="229.0" text="Pro Mode" toggleColor="#5977fb" toggleLineColor="#7290ff" />
+                    </children>
+                </Pane>
+                <Pane fx:id="pane_4" prefHeight="720.0" prefWidth="830.0" style="-fx-background-color: #fff; -fx-background-radius: 0 10 10 0;">
+                    <children>
+                        <JFXButton buttonType="RAISED" layoutX="166.0" layoutY="360.0" onMouseClicked="#testSingleFile" style="-fx-background-color: #5977fb; -fx-text-fill: #fff;" text="Test">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </JFXButton>
+                        <Label layoutX="30.0" layoutY="19.0" text="Test File : ">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="test_single_source" layoutX="30.0" layoutY="54.0" maxWidth="650.0" minWidth="650.0" prefHeight="30.0" prefWidth="650.0" />
+                        <JFXButton buttonType="RAISED" layoutX="690.0" layoutY="54.0" maxWidth="100.0" minWidth="100.0" onMouseClicked="#testSingleBrowse" prefWidth="100.0" style="-fx-border-color: #5977fb; -fx-border-radius: 5;" text="Browse" />
+                        <Label layoutX="30.0" layoutY="104.0" text="Minimum Accuracy : ">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="test_single_acc" layoutX="30.0" layoutY="139.0" maxWidth="770.0" minWidth="650.0" prefHeight="31.0" prefWidth="770.0" text="0.9" />
+                        <JFXCheckBox fx:id="testing_single_verbose" checkedColor="#5977fb" layoutX="729.0" layoutY="689.0" text="Verbose" />
+                        <JFXTextArea fx:id="testing_single_text_area" editable="false" focusTraversable="false" layoutX="25.0" layoutY="455.0" maxWidth="780.0" minWidth="772.0" prefHeight="225.0" prefWidth="780.0" style="-fx-text-fill: #fff; -text-area-background: #000; -fx-control-inner-background: #000;" visible="false" />
+                        <ProgressBar fx:id="testing_single_progress_bar" layoutX="165.0" layoutY="432.0" maxHeight="10.0" maxWidth="500.0" minHeight="10.0" minWidth="500.0" prefHeight="10.0" prefWidth="500.0" visible="false" />
+                        <Label layoutX="30.0" layoutY="186.0" text="Model File :">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="test_single_model" layoutX="30.0" layoutY="221.0" maxWidth="650.0" minWidth="650.0" prefHeight="30.0" prefWidth="650.0" />
+                        <JFXButton buttonType="RAISED" layoutX="690.0" layoutY="221.0" maxWidth="100.0" minWidth="100.0" onMouseClicked="#testSingleModelBrowse" prefWidth="100.0" style="-fx-border-color: #5977fb; -fx-border-radius: 5;" text="Browse" />
+                        <Label layoutX="30.0" layoutY="270.0" text="Labels File : ">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="test_single_label" layoutX="30.0" layoutY="305.0" maxWidth="650.0" minWidth="650.0" prefHeight="30.0" prefWidth="650.0" />
+                        <JFXButton buttonType="RAISED" layoutX="690.0" layoutY="305.0" maxWidth="100.0" minWidth="100.0" onMouseClicked="#testSingleLabelBrowse" prefWidth="100.0" style="-fx-border-color: #5977fb; -fx-border-radius: 5;" text="Browse" />
+                        <JFXTextField fx:id="testing_single_result" editable="false" layoutX="6.0" layoutY="505.0" unFocusColor="#48a138" visible="false">
+                            <font>
+                                <Font size="66.0" />
+                            </font>
+                        </JFXTextField>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="15.0" layoutY="688.0" onMouseClicked="#showSingleTestSteps" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@icons/info__about__information__details__support__help__think-128.png" />
+                            </image>
+                        </ImageView>
+                  <JFXToggleButton fx:id="batch_testing_pro_mode" layoutX="544.0" layoutY="354.0" text="Pro Mode" toggleColor="#5977fb" toggleLineColor="#7290ff" />
+                    </children>
+                </Pane>
+                <Pane fx:id="pane_3" prefHeight="720.0" prefWidth="830.0" style="-fx-background-color: #fff; -fx-background-radius: 0 10 10 0;">
+                    <children>
+                        <JFXButton buttonType="RAISED" layoutX="166.0" layoutY="360.0" onMouseClicked="#startTesting" style="-fx-background-color: #5977fb; -fx-text-fill: #fff;" text="Test">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </JFXButton>
+                        <Label layoutX="30.0" layoutY="19.0" text="Testing Data Directory : ">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="test_source" layoutX="30.0" layoutY="54.0" maxWidth="650.0" minWidth="650.0" prefHeight="30.0" prefWidth="650.0" />
+                        <JFXButton buttonType="RAISED" layoutX="690.0" layoutY="54.0" maxWidth="100.0" minWidth="100.0" onMouseClicked="#testBrowse" prefWidth="100.0" style="-fx-border-color: #5977fb; -fx-border-radius: 5;" text="Browse" />
+                        <Label layoutX="30.0" layoutY="104.0" text="Minimum Accuracy : ">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="test_acc" layoutX="30.0" layoutY="139.0" maxWidth="770.0" minWidth="650.0" prefHeight="31.0" prefWidth="770.0" text="0.9" />
+                        <JFXCheckBox fx:id="testing_verbose" checkedColor="#5977fb" layoutX="729.0" layoutY="689.0" text="Verbose" />
+                        <JFXTextArea fx:id="testing_text_area" editable="false" focusTraversable="false" layoutX="25.0" layoutY="455.0" maxWidth="780.0" minWidth="772.0" prefHeight="225.0" prefWidth="780.0" style="-fx-text-fill: #fff; -text-area-background: #000; -fx-control-inner-background: #000;" visible="false" />
+                        <ProgressBar fx:id="testing_progress_bar" layoutX="165.0" layoutY="432.0" maxHeight="10.0" maxWidth="500.0" minHeight="10.0" minWidth="500.0" prefHeight="10.0" prefWidth="500.0" visible="false" />
+                        <Label layoutX="30.0" layoutY="186.0" text="Model File :">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="test_model" layoutX="30.0" layoutY="221.0" maxWidth="650.0" minWidth="650.0" prefHeight="30.0" prefWidth="650.0" />
+                        <JFXButton buttonType="RAISED" layoutX="690.0" layoutY="221.0" maxWidth="100.0" minWidth="100.0" onMouseClicked="#testModelBrowse" prefWidth="100.0" style="-fx-border-color: #5977fb; -fx-border-radius: 5;" text="Browse" />
+                        <Label layoutX="30.0" layoutY="270.0" text="Labels File : ">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="test_label" layoutX="30.0" layoutY="305.0" maxWidth="650.0" minWidth="650.0" prefHeight="30.0" prefWidth="650.0" />
+                        <JFXButton buttonType="RAISED" layoutX="690.0" layoutY="305.0" maxWidth="100.0" minWidth="100.0" onMouseClicked="#testLabelBrowse" prefWidth="100.0" style="-fx-border-color: #5977fb; -fx-border-radius: 5;" text="Browse" />
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="15.0" layoutY="688.0" onMouseClicked="#showBatchTestingSteps" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@icons/info__about__information__details__support__help__think-128.png" />
+                            </image>
+                        </ImageView>
+                  <JFXToggleButton fx:id="single_testing_pro_mode" layoutX="544.0" layoutY="354.0" text="Pro Mode" toggleColor="#5977fb" toggleLineColor="#7290ff" />
+                    </children>
+                </Pane>
+                <Pane fx:id="pane_home" prefHeight="720.0" prefWidth="830.0" style="-fx-background-color: #fff; -fx-background-radius: 0 10 10 0;">
+                    <children>
+                        <Label layoutX="58.0" layoutY="417.0" text="The Unified Machine Learning Tool is a tool to create and train Tensorflow Image&#10;Classification Models of Convolutional Neural Networks. It gives users the ability&#10;to test their trained model in a single file mode as well as a batch mode. It is&#10;aimed to reduce the work needed to train a convolutional neural network by&#10;providing users with a GUI based software that simplfies training methods, so&#10;that users do not have to hassle with the coding and the commands part and&#10;can focus on the dataset all together, all the while increasing accuracy of&#10;recognizing faces." textAlignment="CENTER">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="250.0" fitWidth="250.0" layoutX="290.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@icons/core-ml-128x128_2x.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </Pane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
